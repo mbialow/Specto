@@ -1,0 +1,303 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<?fileVersion 4.0.0?><cproject storage_type_id="org.eclipse.cdt.core.XmlProjectDescriptionStorage">
+	<storageModule moduleId="org.eclipse.cdt.core.settings">
+		<cconfiguration id="it.baeyens.arduino.core.toolChain.release.1331348515">
+			<storageModule buildSystemId="org.eclipse.cdt.managedbuilder.core.configurationDataProvider" id="it.baeyens.arduino.core.toolChain.release.1331348515" moduleId="org.eclipse.cdt.core.settings" name="Release">
+				<macros>
+					<stringMacro name="DEBUG_AMP" type="VALUE_TEXT" value="1"/>
+				</macros>
+				<externalSettings/>
+				<extensions>
+					<extension id="org.eclipse.cdt.core.MakeErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
+					<extension id="org.eclipse.cdt.core.GCCErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
+					<extension id="org.eclipse.cdt.core.GLDErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
+					<extension id="org.eclipse.cdt.core.ELF" point="org.eclipse.cdt.core.BinaryParser"/>
+				</extensions>
+			</storageModule>
+			<storageModule moduleId="cdtBuildSystem" version="4.0.0">
+				<configuration artifactExtension="" artifactName="${ProjName}" buildProperties="" description="" errorParsers="org.eclipse.cdt.core.MakeErrorParser;org.eclipse.cdt.core.GCCErrorParser;org.eclipse.cdt.core.GLDErrorParser" id="it.baeyens.arduino.core.toolChain.release.1331348515" name="Release" parent="org.eclipse.cdt.build.core.emptycfg" postannouncebuildStep="" postbuildStep="" preannouncebuildStep="" prebuildStep="">
+					<folderInfo id="it.baeyens.arduino.core.toolChain.release.1331348515.433410400" name="/" resourcePath="">
+						<toolChain errorParsers="" id="it.baeyens.arduino.core.toolChain.release.1995820556" name="Arduino Toolchain" superClass="it.baeyens.arduino.core.toolChain.release" unusedChildren="it.baeyens.arduino.tool.ar;it.baeyens.arduino.tool.objcopy.eep">
+							<targetPlatform archList="all" binaryParser="org.eclipse.cdt.core.ELF" id="it.baeyens.arduino.targetplatform.805770192" name="Arduino Target" osList="all" superClass="it.baeyens.arduino.targetplatform"/>
+							<builder buildPath="${workspace_loc:/4ChannelAmp}/Release" errorParsers="org.eclipse.cdt.core.MakeErrorParser" id="it.baeyens.arduino.sketch.builder.526066426" keepEnvironmentInBuildfile="false" managedBuildOn="true" name="Arduino sketch builder" superClass="it.baeyens.arduino.sketch.builder"/>
+							<tool command="-avr-objdump" commandLinePattern="${COMMAND} ${FLAGS}.elf ${INPUTS} &gt;${OUTPUT}" errorParsers="" id="de.innot.avreclipse.tool.objdump.winavr.825151119" name="AVR Create Extended Listing" superClass="de.innot.avreclipse.tool.objdump.winavr"/>
+							<tool command="${JANTJE.SIZE.SWITCH}" commandLinePattern="${COMMAND}" errorParsers="" id="it.baeyens.arduino.tool.size.1211612718" name="Arduino tool Print Size" superClass="it.baeyens.arduino.tool.size"/>
+							<tool id="it.baeyens.arduino.tool.ar.1105610710" name="Arduino archiver" superClass="it.baeyens.arduino.tool.ar"/>
+							<tool command="${A.RECIPE.OBJCOPY.HEX.PATTERN}" commandLinePattern="${COMMAND}" errorParsers="" id="it.baeyens.arduino.tool.objcopy.flash.438390121" name="Arduino tool Create hex" superClass="it.baeyens.arduino.tool.objcopy.flash"/>
+							<tool command="${A.RECIPE.C.COMBINE.PATTERN}" commandLinePattern="${A.RECIPE.C.COMBINE.PATTERN.1} ${FLAGS} ${INPUTS} ${A.RECIPE.C.COMBINE.PATTERN.2} ${A.RECIPE.C.COMBINE.PATTERN.3}" errorParsers="org.eclipse.cdt.core.GLDErrorParser" id="it.baeyens.arduino.tool.combine.1922534015" name="Arduino combiner" superClass="it.baeyens.arduino.tool.combine"/>
+							<tool id="it.baeyens.arduino.tool.objcopy.eep.1526269164" name="Arduino tool Create eeprom" superClass="it.baeyens.arduino.tool.objcopy.eep"/>
+							<tool command="${A.RECIPE.CPP.O.PATTERN}" commandLinePattern="${A.RECIPE.CPP.O.PATTERN.1} ${FLAGS} -D__IN_ECLIPSE__=1 -x c++ ${INPUTS} ${A.RECIPE.CPP.O.PATTERN.2} ${OUTPUT} ${A.RECIPE.CPP.O.PATTERN.3} ${JANTJE.WARNING_LEVEL} ${JANTJE.EXTRA.COMPILE} ${JANTJE.EXTRA.CPP.COMPILE}" errorParsers="org.eclipse.cdt.core.GCCErrorParser" id="it.baeyens.arduino.tool.sketch.compiler.cpp.12751664" name="Arduino C++ Compiler" superClass="it.baeyens.arduino.tool.sketch.compiler.cpp">
+								<option id="it.baeyens.arduino.compiler.cpp.sketch.option.incpath.935158137" name="Include Paths (-I)" superClass="it.baeyens.arduino.compiler.cpp.sketch.option.incpath" valueType="includePath">
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/4ChannelAmp/arduino/core}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/4ChannelAmp/arduino/variant}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/4ChannelAmp/Libraries/arduino-menusystem-master}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/4ChannelAmp/Libraries/encoder-arduino}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/4ChannelAmp/Libraries/ethercard-master}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/4ChannelAmp/Libraries/irmp}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/4ChannelAmp/Libraries/LiquidCrystal_I2C}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/4ChannelAmp/Libraries/Timer1}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/4ChannelAmp/Libraries/Wire}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/4ChannelAmp/Libraries/Wire/utility}&quot;"/>
+								</option>
+								<inputType id="it.baeyens.arduino.compiler.cpp.sketch.input.346641100" name="CPP source files" superClass="it.baeyens.arduino.compiler.cpp.sketch.input"/>
+							</tool>
+							<tool command="${A.RECIPE.C.O.PATTERN}" commandLinePattern="${A.RECIPE.C.O.PATTERN.1} ${FLAGS} -D__IN_ECLIPSE__=1 ${INPUTS} ${A.RECIPE.C.O.PATTERN.2} ${OUTPUT} ${A.RECIPE.C.O.PATTERN.3} ${JANTJE.WARNING_LEVEL} ${JANTJE.EXTRA.COMPILE} ${JANTJE.EXTRA.C.COMPILE}" errorParsers="org.eclipse.cdt.core.GCCErrorParser" id="it.baeyens.arduino.tool.compiler.c.1237667599" name="Arduino C Compiler" superClass="it.baeyens.arduino.tool.compiler.c">
+								<option id="it.baeyens.arduino.compiler.c.sketch.option.incpath.273474634" name="Include Paths (-I)" superClass="it.baeyens.arduino.compiler.c.sketch.option.incpath" valueType="includePath">
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/4ChannelAmp/arduino/core}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/4ChannelAmp/arduino/variant}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/4ChannelAmp/Libraries/arduino-menusystem-master}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/4ChannelAmp/Libraries/encoder-arduino}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/4ChannelAmp/Libraries/ethercard-master}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/4ChannelAmp/Libraries/irmp}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/4ChannelAmp/Libraries/LiquidCrystal_I2C}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/4ChannelAmp/Libraries/Timer1}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/4ChannelAmp/Libraries/Wire}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/4ChannelAmp/Libraries/Wire/utility}&quot;"/>
+								</option>
+								<inputType id="it.baeyens.arduino.compiler.c.sketch.input.1161123332" name="C Source Files" superClass="it.baeyens.arduino.compiler.c.sketch.input"/>
+							</tool>
+						</toolChain>
+					</folderInfo>
+					<sourceEntries>
+						<entry excluding="AMPMenu.cpp|Libraries/*/?xamples" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name=""/>
+					</sourceEntries>
+				</configuration>
+			</storageModule>
+			<storageModule moduleId="org.eclipse.cdt.core.externalSettings"/>
+		</cconfiguration>
+		<cconfiguration id="it.baeyens.arduino.core.toolChain.release.1331348515.433346030">
+			<storageModule buildSystemId="org.eclipse.cdt.managedbuilder.core.configurationDataProvider" id="it.baeyens.arduino.core.toolChain.release.1331348515.433346030" moduleId="org.eclipse.cdt.core.settings" name="R_M328P_16MHZ">
+				<externalSettings/>
+				<extensions>
+					<extension id="org.eclipse.cdt.core.MakeErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
+					<extension id="org.eclipse.cdt.core.GCCErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
+					<extension id="org.eclipse.cdt.core.GLDErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
+					<extension id="org.eclipse.cdt.core.ELF" point="org.eclipse.cdt.core.BinaryParser"/>
+				</extensions>
+			</storageModule>
+			<storageModule moduleId="cdtBuildSystem" version="4.0.0">
+				<configuration artifactName="${ProjName}" buildProperties="" description="R_M328P_16MHZ" id="it.baeyens.arduino.core.toolChain.release.1331348515.433346030" name="R_M328P_16MHZ" parent="org.eclipse.cdt.build.core.emptycfg">
+					<folderInfo id="it.baeyens.arduino.core.toolChain.release.1331348515.433346030." name="/" resourcePath="">
+						<toolChain id="it.baeyens.arduino.core.toolChain.release.2046566634" name="Arduino Toolchain" superClass="it.baeyens.arduino.core.toolChain.release">
+							<targetPlatform archList="all" binaryParser="org.eclipse.cdt.core.ELF" id="it.baeyens.arduino.targetplatform.352437232" name="Arduino Target" osList="all" superClass="it.baeyens.arduino.targetplatform"/>
+							<builder buildPath="${workspace_loc:/4ChannelAmp}/Release" id="it.baeyens.arduino.sketch.builder.1954054526" keepEnvironmentInBuildfile="false" managedBuildOn="true" name="Arduino sketch builder" superClass="it.baeyens.arduino.sketch.builder"/>
+							<tool id="it.baeyens.arduino.tool.sketch.compiler.cpp.130861505" name="Arduino C++ Compiler" superClass="it.baeyens.arduino.tool.sketch.compiler.cpp">
+								<option id="it.baeyens.arduino.compiler.cpp.sketch.option.incpath.1462559345" name="Include Paths (-I)" superClass="it.baeyens.arduino.compiler.cpp.sketch.option.incpath" valueType="includePath">
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/4ChannelAmp/arduino/core}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/4ChannelAmp/arduino/variant}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/4ChannelAmp/Libraries/arduino-menusystem-master}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/4ChannelAmp/Libraries/encoder-arduino}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/4ChannelAmp/Libraries/ethercard-master}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/4ChannelAmp/Libraries/irmp}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/4ChannelAmp/Libraries/LiquidCrystal_I2C}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/4ChannelAmp/Libraries/Timer1}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/4ChannelAmp/Libraries/Wire}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/4ChannelAmp/Libraries/Wire/utility}&quot;"/>
+								</option>
+								<inputType id="it.baeyens.arduino.compiler.cpp.sketch.input.2053487849" name="CPP source files" superClass="it.baeyens.arduino.compiler.cpp.sketch.input"/>
+							</tool>
+							<tool id="it.baeyens.arduino.tool.compiler.c.1378102244" name="Arduino C Compiler" superClass="it.baeyens.arduino.tool.compiler.c">
+								<option id="it.baeyens.arduino.compiler.c.sketch.option.incpath.1896489326" name="Include Paths (-I)" superClass="it.baeyens.arduino.compiler.c.sketch.option.incpath" valueType="includePath">
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/4ChannelAmp/arduino/core}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/4ChannelAmp/arduino/variant}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/4ChannelAmp/Libraries/arduino-menusystem-master}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/4ChannelAmp/Libraries/encoder-arduino}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/4ChannelAmp/Libraries/ethercard-master}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/4ChannelAmp/Libraries/irmp}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/4ChannelAmp/Libraries/LiquidCrystal_I2C}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/4ChannelAmp/Libraries/Timer1}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/4ChannelAmp/Libraries/Wire}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/4ChannelAmp/Libraries/Wire/utility}&quot;"/>
+								</option>
+								<inputType id="it.baeyens.arduino.compiler.c.sketch.input.1763767957" name="C Source Files" superClass="it.baeyens.arduino.compiler.c.sketch.input"/>
+							</tool>
+							<tool id="it.baeyens.arduino.tool.ar.545025474" name="Arduino archiver" superClass="it.baeyens.arduino.tool.ar"/>
+							<tool id="it.baeyens.arduino.tool.combine.1045365939" name="Arduino combiner" superClass="it.baeyens.arduino.tool.combine"/>
+							<tool id="it.baeyens.arduino.tool.objcopy.eep.1739748635" name="Arduino tool Create eeprom" superClass="it.baeyens.arduino.tool.objcopy.eep"/>
+							<tool id="it.baeyens.arduino.tool.objcopy.flash.766974349" name="Arduino tool Create hex" superClass="it.baeyens.arduino.tool.objcopy.flash"/>
+							<tool id="it.baeyens.arduino.tool.size.1105773992" name="Arduino tool Print Size" superClass="it.baeyens.arduino.tool.size"/>
+						</toolChain>
+					</folderInfo>
+					<folderInfo id="it.baeyens.arduino.core.toolChain.release.1331348515.433346030.1996518432" name="/" resourcePath="R_M328P_16MHZ">
+						<toolChain id="it.baeyens.arduino.core.toolChain.release.1420539630" name="Arduino Toolchain" superClass="it.baeyens.arduino.core.toolChain.release" unusedChildren="">
+							<targetPlatform archList="all" binaryParser="org.eclipse.cdt.core.ELF" id="it.baeyens.arduino.targetplatform" name="Arduino Target" osList="all" superClass="it.baeyens.arduino.targetplatform"/>
+							<tool id="it.baeyens.arduino.tool.objcopy.eep.1398224962" name="Arduino tool Create eeprom" superClass="it.baeyens.arduino.tool.objcopy.eep.1739748635"/>
+							<tool id="it.baeyens.arduino.tool.combine.1803672519" name="Arduino combiner" superClass="it.baeyens.arduino.tool.combine.1045365939"/>
+							<tool id="it.baeyens.arduino.tool.sketch.compiler.cpp.1369445586" name="Arduino C++ Compiler" superClass="it.baeyens.arduino.tool.sketch.compiler.cpp.130861505">
+								<inputType id="it.baeyens.arduino.compiler.cpp.sketch.input.1543769437" name="CPP source files" superClass="it.baeyens.arduino.compiler.cpp.sketch.input"/>
+							</tool>
+							<tool id="it.baeyens.arduino.tool.ar.1347741617" name="Arduino archiver" superClass="it.baeyens.arduino.tool.ar.545025474"/>
+							<tool id="de.innot.avreclipse.tool.objdump.winavr.1886359126" name="AVR Create Extended Listing" superClass="de.innot.avreclipse.tool.objdump.winavr"/>
+							<tool id="it.baeyens.arduino.tool.compiler.c.769915981" name="Arduino C Compiler" superClass="it.baeyens.arduino.tool.compiler.c.1378102244">
+								<inputType id="it.baeyens.arduino.compiler.c.sketch.input.1818370088" name="C Source Files" superClass="it.baeyens.arduino.compiler.c.sketch.input"/>
+							</tool>
+							<tool id="it.baeyens.arduino.tool.size.15656160" name="Arduino tool Print Size" superClass="it.baeyens.arduino.tool.size.1105773992"/>
+							<tool id="it.baeyens.arduino.tool.objcopy.flash.529867361" name="Arduino tool Create hex" superClass="it.baeyens.arduino.tool.objcopy.flash.766974349"/>
+						</toolChain>
+					</folderInfo>
+					<sourceEntries>
+						<entry excluding="AMPMenu.h|AMPMenu.cpp|Libraries/*/?xamples" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name=""/>
+					</sourceEntries>
+				</configuration>
+			</storageModule>
+			<storageModule moduleId="org.eclipse.cdt.core.externalSettings"/>
+		</cconfiguration>
+		<cconfiguration id="it.baeyens.arduino.core.toolChain.release.1331348515.445640748">
+			<storageModule buildSystemId="org.eclipse.cdt.managedbuilder.core.configurationDataProvider" id="it.baeyens.arduino.core.toolChain.release.1331348515.445640748" moduleId="org.eclipse.cdt.core.settings" name="D_M328P_16MHZ">
+				<externalSettings/>
+				<extensions>
+					<extension id="org.eclipse.cdt.core.MakeErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
+					<extension id="org.eclipse.cdt.core.GCCErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
+					<extension id="org.eclipse.cdt.core.GLDErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
+					<extension id="org.eclipse.cdt.core.ELF" point="org.eclipse.cdt.core.BinaryParser"/>
+				</extensions>
+			</storageModule>
+			<storageModule moduleId="cdtBuildSystem" version="4.0.0">
+				<configuration artifactName="${ProjName}" buildProperties="" description="D_M328P_16MHZ" id="it.baeyens.arduino.core.toolChain.release.1331348515.445640748" name="D_M328P_16MHZ" parent="org.eclipse.cdt.build.core.emptycfg">
+					<folderInfo id="it.baeyens.arduino.core.toolChain.release.1331348515.445640748." name="/" resourcePath="">
+						<toolChain id="it.baeyens.arduino.core.toolChain.release.431620043" name="Arduino Toolchain" superClass="it.baeyens.arduino.core.toolChain.release">
+							<targetPlatform archList="all" binaryParser="org.eclipse.cdt.core.ELF" id="it.baeyens.arduino.targetplatform.1539052142" name="Arduino Target" osList="all" superClass="it.baeyens.arduino.targetplatform"/>
+							<builder buildPath="${workspace_loc:/4ChannelAmp}/Release" id="it.baeyens.arduino.sketch.builder.2091697378" keepEnvironmentInBuildfile="false" managedBuildOn="true" name="Arduino sketch builder" superClass="it.baeyens.arduino.sketch.builder"/>
+							<tool commandLinePattern="${A.RECIPE.C.O.PATTERN.1} ${FLAGS} -D__IN_ECLIPSE__=1 ${INPUTS} ${A.RECIPE.C.O.PATTERN.2} ${OUTPUT} ${A.RECIPE.C.O.PATTERN.3} ${JANTJE.WARNING_LEVEL} ${JANTJE.EXTRA.COMPILE} ${JANTJE.EXTRA.C.COMPILE}" id="it.baeyens.arduino.tool.compiler.c.1737668032" name="Arduino C Compiler" superClass="it.baeyens.arduino.tool.compiler.c">
+								<option id="it.baeyens.arduino.compiler.c.sketch.option.incpath.1028173615" name="Include Paths (-I)" superClass="it.baeyens.arduino.compiler.c.sketch.option.incpath" valueType="includePath">
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/4ChannelAmp/arduino/core}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/4ChannelAmp/arduino/variant}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/4ChannelAmp/Libraries/arduino-menusystem-master}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/4ChannelAmp/Libraries/encoder-arduino}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/4ChannelAmp/Libraries/ethercard-master}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/4ChannelAmp/Libraries/irmp}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/4ChannelAmp/Libraries/LiquidCrystal_I2C}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/4ChannelAmp/Libraries/Timer1}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/4ChannelAmp/Libraries/Wire}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/4ChannelAmp/Libraries/Wire/utility}&quot;"/>
+								</option>
+								<inputType id="it.baeyens.arduino.compiler.c.sketch.input.219518450" name="C Source Files" superClass="it.baeyens.arduino.compiler.c.sketch.input"/>
+							</tool>
+							<tool id="it.baeyens.arduino.tool.ar.53235664" name="Arduino archiver" superClass="it.baeyens.arduino.tool.ar"/>
+							<tool id="it.baeyens.arduino.tool.combine.1060153612" name="Arduino combiner" superClass="it.baeyens.arduino.tool.combine"/>
+							<tool commandLinePattern="${A.RECIPE.CPP.O.PATTERN.1} ${FLAGS} -D__IN_ECLIPSE__=1 -x c++ ${INPUTS} ${A.RECIPE.CPP.O.PATTERN.2} ${OUTPUT} ${A.RECIPE.CPP.O.PATTERN.3} ${JANTJE.WARNING_LEVEL} ${JANTJE.EXTRA.COMPILE} ${JANTJE.EXTRA.CPP.COMPILE} -DDHCPDEBUG -DDEBUG_AMP" id="it.baeyens.arduino.tool.sketch.compiler.cpp.562223413" name="Arduino C++ Compiler" superClass="it.baeyens.arduino.tool.sketch.compiler.cpp">
+								<option id="it.baeyens.arduino.compiler.cpp.sketch.option.incpath.166269859" name="Include Paths (-I)" superClass="it.baeyens.arduino.compiler.cpp.sketch.option.incpath" valueType="includePath">
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/4ChannelAmp/arduino/core}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/4ChannelAmp/arduino/variant}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/4ChannelAmp/Libraries/arduino-menusystem-master}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/4ChannelAmp/Libraries/encoder-arduino}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/4ChannelAmp/Libraries/ethercard-master}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/4ChannelAmp/Libraries/irmp}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/4ChannelAmp/Libraries/LiquidCrystal_I2C}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/4ChannelAmp/Libraries/Timer1}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/4ChannelAmp/Libraries/Wire}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/4ChannelAmp/Libraries/Wire/utility}&quot;"/>
+								</option>
+								<inputType id="it.baeyens.arduino.compiler.cpp.sketch.input.19080477" name="CPP source files" superClass="it.baeyens.arduino.compiler.cpp.sketch.input"/>
+							</tool>
+							<tool id="it.baeyens.arduino.tool.size.1614505158" name="Arduino tool Print Size" superClass="it.baeyens.arduino.tool.size"/>
+							<tool commandLinePattern="${COMMAND} ${FLAGS}.elf ${INPUTS} &gt;${OUTPUT}" id="de.innot.avreclipse.tool.objdump.winavr.1296963197" name="AVR Create Extended Listing" superClass="de.innot.avreclipse.tool.objdump.winavr"/>
+							<tool id="it.baeyens.arduino.tool.objcopy.eep.663170935" name="Arduino tool Create eeprom" superClass="it.baeyens.arduino.tool.objcopy.eep"/>
+							<tool id="it.baeyens.arduino.tool.objcopy.flash.1563297765" name="Arduino tool Create hex" superClass="it.baeyens.arduino.tool.objcopy.flash"/>
+						</toolChain>
+					</folderInfo>
+					<sourceEntries>
+						<entry excluding="AMPMenu.cpp|Libraries/*/?xamples" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name=""/>
+					</sourceEntries>
+				</configuration>
+			</storageModule>
+			<storageModule moduleId="org.eclipse.cdt.core.externalSettings"/>
+		</cconfiguration>
+		<cconfiguration id="it.baeyens.arduino.core.toolChain.release.1331348515.445640748.21273264">
+			<storageModule buildSystemId="org.eclipse.cdt.managedbuilder.core.configurationDataProvider" id="it.baeyens.arduino.core.toolChain.release.1331348515.445640748.21273264" moduleId="org.eclipse.cdt.core.settings" name="R_M328P_16MHZ">
+				<externalSettings/>
+				<extensions>
+					<extension id="org.eclipse.cdt.core.MakeErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
+					<extension id="org.eclipse.cdt.core.GCCErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
+					<extension id="org.eclipse.cdt.core.GLDErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
+					<extension id="org.eclipse.cdt.core.ELF" point="org.eclipse.cdt.core.BinaryParser"/>
+				</extensions>
+			</storageModule>
+			<storageModule moduleId="cdtBuildSystem" version="4.0.0">
+				<configuration artifactExtension="" artifactName="${ProjName}" buildProperties="" description="R_M328P_16MHZ" errorParsers="org.eclipse.cdt.core.MakeErrorParser;org.eclipse.cdt.core.GCCErrorParser;org.eclipse.cdt.core.GLDErrorParser" id="it.baeyens.arduino.core.toolChain.release.1331348515.445640748.21273264" name="R_M328P_16MHZ" parent="org.eclipse.cdt.build.core.emptycfg" postannouncebuildStep="" postbuildStep="" preannouncebuildStep="" prebuildStep="">
+					<folderInfo id="it.baeyens.arduino.core.toolChain.release.1331348515.445640748.21273264." name="/" resourcePath="">
+						<toolChain errorParsers="" id="it.baeyens.arduino.core.toolChain.release.1642926039" name="Arduino Toolchain" superClass="it.baeyens.arduino.core.toolChain.release">
+							<targetPlatform archList="all" binaryParser="org.eclipse.cdt.core.ELF" id="it.baeyens.arduino.targetplatform.905447893" name="Arduino Target" osList="all" superClass="it.baeyens.arduino.targetplatform"/>
+							<builder buildPath="${workspace_loc:/4ChannelAmp}/Release" errorParsers="org.eclipse.cdt.core.MakeErrorParser" id="it.baeyens.arduino.sketch.builder.1416634527" keepEnvironmentInBuildfile="false" managedBuildOn="true" name="Arduino sketch builder" superClass="it.baeyens.arduino.sketch.builder"/>
+							<tool command="${A.RECIPE.C.O.PATTERN}" commandLinePattern="${A.RECIPE.C.O.PATTERN.1} ${FLAGS} -D__IN_ECLIPSE__=1 ${INPUTS} ${A.RECIPE.C.O.PATTERN.2} ${OUTPUT} ${A.RECIPE.C.O.PATTERN.3} ${JANTJE.WARNING_LEVEL} ${JANTJE.EXTRA.COMPILE} ${JANTJE.EXTRA.C.COMPILE}" errorParsers="org.eclipse.cdt.core.GCCErrorParser" id="it.baeyens.arduino.tool.compiler.c.713229438" name="Arduino C Compiler" superClass="it.baeyens.arduino.tool.compiler.c">
+								<option id="it.baeyens.arduino.compiler.c.sketch.option.incpath.1301263806" name="Include Paths (-I)" superClass="it.baeyens.arduino.compiler.c.sketch.option.incpath" valueType="includePath">
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/4ChannelAmp/arduino/core}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/4ChannelAmp/arduino/variant}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/4ChannelAmp/Libraries/arduino-menusystem-master}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/4ChannelAmp/Libraries/encoder-arduino}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/4ChannelAmp/Libraries/ethercard-master}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/4ChannelAmp/Libraries/irmp}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/4ChannelAmp/Libraries/LiquidCrystal_I2C}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/4ChannelAmp/Libraries/Timer1}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/4ChannelAmp/Libraries/Wire}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/4ChannelAmp/Libraries/Wire/utility}&quot;"/>
+								</option>
+								<inputType id="it.baeyens.arduino.compiler.c.sketch.input.1264485111" name="C Source Files" superClass="it.baeyens.arduino.compiler.c.sketch.input"/>
+							</tool>
+							<tool command="${A.RECIPE.AR.PATTERN}" commandLinePattern="${A.RECIPE.AR.PATTERN.1} ${FLAGS} ${INPUTS} ${A.RECIPE.AR.PATTERN.2} ${A.RECIPE.AR.PATTERN.3}" errorParsers="org.eclipse.cdt.core.GLDErrorParser" id="it.baeyens.arduino.tool.ar.446487184" name="Arduino archiver" superClass="it.baeyens.arduino.tool.ar"/>
+							<tool command="${A.RECIPE.C.COMBINE.PATTERN}" commandLinePattern="${A.RECIPE.C.COMBINE.PATTERN.1} ${FLAGS} ${INPUTS} ${A.RECIPE.C.COMBINE.PATTERN.2} ${A.RECIPE.C.COMBINE.PATTERN.3}" errorParsers="org.eclipse.cdt.core.GLDErrorParser" id="it.baeyens.arduino.tool.combine.546923128" name="Arduino combiner" superClass="it.baeyens.arduino.tool.combine"/>
+							<tool command="${A.RECIPE.CPP.O.PATTERN}" commandLinePattern="${A.RECIPE.CPP.O.PATTERN.1} ${FLAGS} -D__IN_ECLIPSE__=1 -x c++ ${INPUTS} ${A.RECIPE.CPP.O.PATTERN.2} ${OUTPUT} ${A.RECIPE.CPP.O.PATTERN.3} ${JANTJE.WARNING_LEVEL} ${JANTJE.EXTRA.COMPILE} ${JANTJE.EXTRA.CPP.COMPILE}" errorParsers="org.eclipse.cdt.core.GCCErrorParser" id="it.baeyens.arduino.tool.sketch.compiler.cpp.302233383" name="Arduino C++ Compiler" superClass="it.baeyens.arduino.tool.sketch.compiler.cpp">
+								<option id="it.baeyens.arduino.compiler.cpp.sketch.option.incpath.1643569961" name="Include Paths (-I)" superClass="it.baeyens.arduino.compiler.cpp.sketch.option.incpath" valueType="includePath">
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/4ChannelAmp/arduino/core}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/4ChannelAmp/arduino/variant}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/4ChannelAmp/Libraries/arduino-menusystem-master}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/4ChannelAmp/Libraries/encoder-arduino}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/4ChannelAmp/Libraries/ethercard-master}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/4ChannelAmp/Libraries/irmp}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/4ChannelAmp/Libraries/LiquidCrystal_I2C}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/4ChannelAmp/Libraries/Timer1}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/4ChannelAmp/Libraries/Wire}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/4ChannelAmp/Libraries/Wire/utility}&quot;"/>
+								</option>
+								<inputType id="it.baeyens.arduino.compiler.cpp.sketch.input.2013985701" name="CPP source files" superClass="it.baeyens.arduino.compiler.cpp.sketch.input"/>
+							</tool>
+							<tool command="${JANTJE.SIZE.SWITCH}" commandLinePattern="${COMMAND}" errorParsers="" id="it.baeyens.arduino.tool.size.1436035940" name="Arduino tool Print Size" superClass="it.baeyens.arduino.tool.size"/>
+							<tool command="-avr-objdump" commandLinePattern="${COMMAND} ${FLAGS}.elf ${INPUTS} &gt;${OUTPUT}" errorParsers="" id="de.innot.avreclipse.tool.objdump.winavr.1541187157" name="AVR Create Extended Listing" superClass="de.innot.avreclipse.tool.objdump.winavr"/>
+							<tool command="${A.RECIPE.OBJCOPY.EEP.PATTERN}" commandLinePattern="${COMMAND}" errorParsers="" id="it.baeyens.arduino.tool.objcopy.eep.2102460769" name="Arduino tool Create eeprom" superClass="it.baeyens.arduino.tool.objcopy.eep"/>
+							<tool command="${A.RECIPE.OBJCOPY.HEX.PATTERN}" commandLinePattern="${COMMAND}" errorParsers="" id="it.baeyens.arduino.tool.objcopy.flash.910528477" name="Arduino tool Create hex" superClass="it.baeyens.arduino.tool.objcopy.flash"/>
+						</toolChain>
+					</folderInfo>
+					<sourceEntries>
+						<entry excluding="AMPMenu.cpp|Libraries/*/?xamples" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name=""/>
+					</sourceEntries>
+				</configuration>
+			</storageModule>
+			<storageModule moduleId="org.eclipse.cdt.core.externalSettings"/>
+		</cconfiguration>
+	</storageModule>
+	<storageModule moduleId="cdtBuildSystem" version="4.0.0">
+		<project id="4ChannelAmp.null.1494872535" name="4ChannelAmp"/>
+	</storageModule>
+	<storageModule moduleId="scannerConfiguration">
+		<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId=""/>
+	</storageModule>
+	<storageModule moduleId="org.eclipse.cdt.core.LanguageSettingsProviders"/>
+	<storageModule moduleId="refreshScope" versionNumber="2">
+		<configuration configurationName="R_M328P_16MHZ">
+			<resource resourceType="PROJECT" workspacePath="/4ChannelAmp"/>
+		</configuration>
+		<configuration configurationName="Release">
+			<resource resourceType="PROJECT" workspacePath="/4ChannelAmp"/>
+		</configuration>
+		<configuration configurationName="D_M328P_16MHZ"/>
+	</storageModule>
+	<storageModule moduleId="org.eclipse.cdt.make.core.buildtargets">
+		<buildTargets>
+			<target name="4ChannelAmp.lss" path="Release" targetID="org.eclipse.cdt.build.MakeTargetBuilder">
+				<buildCommand>make</buildCommand>
+				<buildTarget>4ChannelAmp.lss</buildTarget>
+				<stopOnError>true</stopOnError>
+				<useDefaultCommand>true</useDefaultCommand>
+				<runAllBuilders>true</runAllBuilders>
+			</target>
+			<target name="4ChannelAmp.elf" path="Release" targetID="org.eclipse.cdt.build.MakeTargetBuilder">
+				<buildCommand>make</buildCommand>
+				<buildArguments/>
+				<buildTarget>4ChannelAmp.elf</buildTarget>
+				<stopOnError>true</stopOnError>
+				<useDefaultCommand>true</useDefaultCommand>
+				<runAllBuilders>true</runAllBuilders>
+			</target>
+		</buildTargets>
+	</storageModule>
+</cproject>
