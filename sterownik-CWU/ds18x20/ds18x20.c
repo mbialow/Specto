@@ -43,17 +43,15 @@ uint16_t temperature = 0xf1f2 ;
 /*
  * Start measurement for all sensors
  */
-uint8_t DS18X20_StartMeasurement(void)
-{
-   uint8_t ret = DS18X20_START_FAIL;
+uint8_t DS18X20_StartMeasurement(void){
 
     ow_reset();
     if( ow_input_pin_state() ) { // only send if bus is "idle" = high
         ow_command( DS18X20_CONVERT_T);
-        ret = DS18X20_OK;
+        return DS18X20_OK;
     }
 
-    return ret;
+    return DS18X20_START_FAIL;
 }
 
 /*
@@ -68,12 +66,9 @@ uint8_t DS18X20_IsInProgress(void)
 /*
  * Odczyt temperatury
  */
-uint8_t DS18X20_ReadTemperature(void)
-{
-    uint8_t ret = DS18X20_OK;
+uint8_t DS18X20_ReadTemperature(void){
 
     ow_reset();
-
     ow_command( DS18X20_READ);
 
     for( uint8_t i = 0; i < DS18X20_SP_SIZE; i++ ) {
@@ -81,10 +76,10 @@ uint8_t DS18X20_ReadTemperature(void)
     }
 
     if( crc8( &scratchPad[0], DS18X20_SP_SIZE ) ) {
-        ret = DS18X20_ERROR_CRC;
+        return DS18X20_ERROR_CRC;
     }
 
     temperature = ((uint16_t)scratchPad[1] << 8) | scratchPad[0];
 
-    return ret;
+    return DS18X20_OK;
 }

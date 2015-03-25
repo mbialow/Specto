@@ -19,17 +19,18 @@
 #include <string.h>
 
 volatile StanUkladu stanUkladu;
+//StanUkladu EEMEM ss;
 
 ISR(TIMER1_COMPA_vect){
     stanUkladu.stanCzujnika = ODCZYTAJ_TEMPERATURE;
     stanUkladu.licznikOdczytowTemperatury++;
-    timer1_A_stop();
+    timer1_przerwanie_compare_match_A_stop();
 }
 
 ISR(TIMER1_COMPB_vect){
     stanUkladu.czasPracyPompy++;
     if(stanUkladu.stanPompy == WLACZONA && stanUkladu.czasPracyPompy > MAKSYMALNY_CZAS_PRACY_POMPY_SEKUNDY){
-        timer1_B_stop();
+        timer1_przerwanie_compare_match_B_stop();
         wylacz_pompe();
     }
 }
@@ -49,20 +50,20 @@ static void timer1_init(){
 }
 
 
-static void timer1_A_start(){
+static void timer1_przerwanie_compare_match_A_start(){
     TIMSK |= (1 << OCIE1A);
 }
 
-static void timer1_A_stop(){
+static void timer1_przerwanie_compare_match_A_stop(){
     TIMSK &= ~(1 << OCIE1A);
 }
 
 
-static void timer1_B_start(){
+static void timer1_przerwanie_compare_match_B_start(){
     TIMSK |= (1 << OCIE1B);
 }
 
-static void timer1_B_stop(){
+static void timer1_przerwanie_compare_match_B_stop(){
     TIMSK &= ~(1 << OCIE1B);
 }
 
@@ -89,9 +90,11 @@ static void wylacz_pompe(){
 
 int main(void){
 
-//ustaw startowe parametry
+//ustaw domyslne parametry
     stanUkladu.poprzedniOdczytTemperatury = 0xFF;
+    stanUkladu.licznikOdczytowTemperatury = LICZNIK_ODCZYTOW_TEMPERATURY;
     stanUkladu.stanPompy = WYLACZONA;
+    stanUkladu.stanCzujnika = SPOCZYNEK;
 
 #ifdef DEBUG_USART
 
@@ -102,13 +105,13 @@ int main(void){
     io_init();
     timer1_init();
 
-    DS18X20_StartMeasurement();
-    timer1_A_start();
+    //DS18X20_StartMeasurement();
+    //timer1_przerwanie_compare_match_A_start();
 
     wdt_enable(WDTO_500MS);
     sei();
 
-    uint8_t tempOdczytanaCzescCalkowita = 0x00;
+    uint8_t tempOdczytanaCzescCalkowita = 0x20;
 
     for(;;){
 
@@ -126,7 +129,7 @@ int main(void){
 
                 if(stanUkladu.stanPompy == WYLACZONA && (tempOdczytanaCzescCalkowita - stanUkladu.poprzedniOdczytTemperatury >= HISTEREZA)){
                     zalacz_pompe();
-                    timer1_B_start();
+                    timer1_przerwanie_compare_match_B_start();
                 }
 
                 if(stanUkladu.licznikOdczytowTemperatury > LICZNIK_ODCZYTOW_TEMPERATURY){
@@ -135,13 +138,11 @@ int main(void){
                 }
             }
 
-
-
         }
 
         if(!DS18X20_IsInProgress()){
             DS18X20_StartMeasurement();
-            timer1_A_start();
+            timer1_przerwanie_compare_match_A_start();
         }
 
     }
