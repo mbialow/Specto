@@ -21,7 +21,7 @@
 #define MAKSYMALNY_CZAS_PRACY_POMPY_SEKUNDY 60*5 //(60 s * 5 minut)
 
 
-typedef enum StanPompy {
+typedef enum tStanPompy {
     WLACZONA = 0x01,
     WYLACZONA
 
