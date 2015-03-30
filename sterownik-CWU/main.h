@@ -18,7 +18,7 @@
 //odczyt bedzie przypisany jako poprzedni po przekroczeniu tej wartosci
 #define LICZNIK_ODCZYTOW_TEMPERATURY 20
 
-#define MAKSYMALNY_CZAS_PRACY_POMPY_SEKUNDY 60*10 //(60 s * 10 minut)
+#define MAKSYMALNY_CZAS_PRACY_POMPY_SEKUNDY 60*5 //(60 s * 5 minut)
 
 
 typedef enum StanPompy {

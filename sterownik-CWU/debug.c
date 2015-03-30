@@ -61,7 +61,7 @@ uint8_t * ltoaz(unsigned long val, uint8_t *buf, int radix, int dig) {
     return buf;
 }
 
-void printTmep(unsigned long tempOdczytanaCzescCalkowita) {
+void printTemp(unsigned long tempOdczytanaCzescCalkowita) {
 
     ret = buffer;
     ret = ltoaz(tempOdczytanaCzescCalkowita, ret, 10, 0);

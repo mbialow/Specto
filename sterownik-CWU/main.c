@@ -16,7 +16,6 @@
 #include "ds18x20/ds18x20.h"
 #include "main.h"
 #include "debug.h"
-#include <string.h>
 
 volatile StanUkladu stanUkladu;
 //StanUkladu EEMEM ss;
@@ -120,11 +119,11 @@ int main(void){
             stanUkladu.stanCzujnika = SPOCZYNEK;
 
             if(DS18X20_OK == DS18X20_ReadTemperature()){
-                tempOdczytanaCzescCalkowita = (( temperature >> 4 ) & 0x7F );
+                tempOdczytanaCzescCalkowita = ( temperature >> 4 );
 
 #ifdef DEBUG_USART
 
-            printTmep(tempOdczytanaCzescCalkowita);
+            printTemp(tempOdczytanaCzescCalkowita);
 #endif
 
                 if(stanUkladu.stanPompy == WYLACZONA && (tempOdczytanaCzescCalkowita - stanUkladu.poprzedniOdczytTemperatury >= HISTEREZA)){
@@ -132,7 +131,7 @@ int main(void){
                     timer1_przerwanie_compare_match_B_start();
                 }
 
-                if(stanUkladu.licznikOdczytowTemperatury > LICZNIK_ODCZYTOW_TEMPERATURY){
+                if(stanUkladu.licznikOdczytowTemperatury >= LICZNIK_ODCZYTOW_TEMPERATURY){
                     stanUkladu.poprzedniOdczytTemperatury = tempOdczytanaCzescCalkowita;
                     stanUkladu.licznikOdczytowTemperatury = 0;
                 }

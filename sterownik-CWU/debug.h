@@ -10,7 +10,7 @@
 
 #include <avr/io.h>
 
-void printTmep(unsigned long tempOdczytanaCzescCalkowita);
+void printTemp(unsigned long tempOdczytanaCzescCalkowita);
 
 
 void send_chars(uint8_t *p);
