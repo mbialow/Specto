@@ -34,36 +34,42 @@ ISR(TIMER1_COMPB_vect){
     }
 }
 
+static void timer1_stop(){
+    TCCR1B &= ~(1 << CS12)|(1 << CS10);
+}
+
+static void timer1_start(){
+    // timer1 ustawienie  prescaler = 1024
+    TCCR1B |= (1 << CS12)|(1 << CS10);
+}
 
 static void timer1_init(){
-
-    // timer0 ustawienie  prescaler = 1024
-    TCCR1B |= (1 << CS12)|(1 << CS10);
     //tryb CTC
     TCCR1B |= (1 << WGM12);
-
     //przerwanie co 1s
     OCR1A = 976;
-    //dla 8MHZ - 8000
-    //OCR1A = 8000;
 }
 
 
 static void timer1_przerwanie_compare_match_A_start(){
     TIMSK |= (1 << OCIE1A);
+    timer1_start();
 }
 
 static void timer1_przerwanie_compare_match_A_stop(){
     TIMSK &= ~(1 << OCIE1A);
+    timer1_stop();
 }
 
 
 static void timer1_przerwanie_compare_match_B_start(){
     TIMSK |= (1 << OCIE1B);
+    timer1_start();
 }
 
 static void timer1_przerwanie_compare_match_B_stop(){
     TIMSK &= ~(1 << OCIE1B);
+    timer1_stop();
 }
 
 static void io_init(){
@@ -115,33 +121,39 @@ int main(void){
     for(;;){
 
         wdt_reset();
-        if(stanUkladu.stanCzujnika == ODCZYTAJ_TEMPERATURE && stanUkladu.stanPompy == WYLACZONA){
-            stanUkladu.stanCzujnika = SPOCZYNEK;
 
-            if(DS18X20_OK == DS18X20_ReadTemperature()){
-                tempOdczytanaCzescCalkowita = ( temperature >> 4 );
+        if (stanUkladu.stanPompy == WYLACZONA) {
+
+            if (stanUkladu.stanCzujnika == ODCZYTAJ_TEMPERATURE) {
+                stanUkladu.stanCzujnika = SPOCZYNEK;
+
+                if (DS18X20_OK == DS18X20_ReadTemperature()) {
+                    tempOdczytanaCzescCalkowita = (temperature >> 4);
 
 #ifdef DEBUG_USART
 
-            printTemp(tempOdczytanaCzescCalkowita);
+                    printTemp(tempOdczytanaCzescCalkowita);
 #endif
 
-                if(stanUkladu.stanPompy == WYLACZONA && (tempOdczytanaCzescCalkowita - stanUkladu.poprzedniOdczytTemperatury >= HISTEREZA)){
-                    zalacz_pompe();
-                    timer1_przerwanie_compare_match_B_start();
+                    if (tempOdczytanaCzescCalkowita - stanUkladu.poprzedniOdczytTemperatury >= HISTEREZA) {
+                        zalacz_pompe();
+                        timer1_przerwanie_compare_match_B_start();
+                        stanUkladu.licznikOdczytowTemperatury = LICZNIK_ODCZYTOW_TEMPERATURY;
+                    }
+
+                    if (stanUkladu.licznikOdczytowTemperatury >= LICZNIK_ODCZYTOW_TEMPERATURY) {
+                        stanUkladu.poprzedniOdczytTemperatury = tempOdczytanaCzescCalkowita;
+                        stanUkladu.licznikOdczytowTemperatury = 0;
+                    }
                 }
 
-                if(stanUkladu.licznikOdczytowTemperatury >= LICZNIK_ODCZYTOW_TEMPERATURY){
-                    stanUkladu.poprzedniOdczytTemperatury = tempOdczytanaCzescCalkowita;
-                    stanUkladu.licznikOdczytowTemperatury = 0;
-                }
             }
 
-        }
+            if (!DS18X20_IsInProgress()) {
+                DS18X20_StartMeasurement();
+                timer1_przerwanie_compare_match_A_start();
+            }
 
-        if(!DS18X20_IsInProgress()){
-            DS18X20_StartMeasurement();
-            timer1_przerwanie_compare_match_A_start();
         }
 
     }
