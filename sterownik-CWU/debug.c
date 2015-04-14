@@ -21,7 +21,7 @@ uint8_t buffer[10];
  * send_uart
  * Sends a single char to UART without ISR
  */
-void send_uart(uint8_t c) {
+void send_char(uint8_t c) {
     // wait for empty data register
     while (!(UCSRA & (1 << UDRE)))
     ;
@@ -31,7 +31,7 @@ void send_uart(uint8_t c) {
 
 void send_chars(uint8_t *p) {
     while (*p) {
-        send_uart(*p++);
+        send_char(*p++);
     }
 }
 

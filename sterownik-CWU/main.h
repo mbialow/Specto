@@ -21,23 +21,17 @@
 #define MAKSYMALNY_CZAS_PRACY_POMPY_SEKUNDY 60*5 //(60 s * 5 minut)
 
 
-typedef enum tStanPompy {
-    WLACZONA = 0x01,
-    WYLACZONA
+typedef enum tStan {
+    PRACA_POMPY = 0x01,
+    ODCZYTAJ_TEMEPERATURE,
+    SPOCZYNEK
 
-} StanPompy;
-
-typedef enum tStanCzujnika {
-    SPOCZYNEK = 0x00,
-    ODCZYTAJ_TEMPERATURE
-
-} StanCzujnika;
+} Stan;
 
 typedef struct tStanUkladu {
     uint8_t      poprzedniOdczytTemperatury;
-    StanPompy    stanPompy;
-    StanCzujnika stanCzujnika;
-    uint16_t     czasPracyPompy;
+    Stan         stan;
+    uint16_t     czasPracyPompySekundy;
     uint8_t      licznikOdczytowTemperatury;
 
 } StanUkladu ;
@@ -47,6 +41,8 @@ static void wylacz_pompe();
 static void zalacz_pompe();
 
 static void timer1_init();
+static void timer1_stop();
+static void timer1_start();
 static void timer1_przerwanie_compare_match_A_start();
 static void timer1_przerwanie_compare_match_A_stop();
 static void timer1_przerwanie_compare_match_B_start();

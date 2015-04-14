@@ -19,7 +19,7 @@ void send_chars(uint8_t *p);
  * send_uart
  * Sends a single char to UART without ISR
  */
-void send_uart(uint8_t c);
+void send_char(uint8_t c);
 
 
 uint8_t * ltoaz(unsigned long val, uint8_t *buf, int radix, int dig) ;
